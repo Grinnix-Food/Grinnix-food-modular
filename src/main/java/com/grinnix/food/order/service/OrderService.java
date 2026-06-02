@@ -12,7 +12,6 @@ import com.grinnix.food.payment.enums.PaymentStatusEnum;
 import com.grinnix.food.payment.repositories.PaymentOrderRepository;
 import com.grinnix.food.product.entitys.ProductsEntity;
 import com.grinnix.food.product.repository.ProductsRepository;
-
 import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -46,6 +45,7 @@ public class OrderService {
     order.setAddress(request.address());
     order.setFinished(false);
     order.setTotal(BigDecimal.ZERO);
+    order.setObservation(request.observation());
 
     return orderRepository.save(order);
   }
