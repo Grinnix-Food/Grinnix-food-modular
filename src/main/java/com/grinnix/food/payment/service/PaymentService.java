@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class PaymentService {
 
   private final PaymentOrderRepository paymentOrderRepository;
-  private final PaymentHookService paymentHookService;
+  private final PaymentWeebHookService paymentWeebHookService;
   private final EmailService emailService;
 
   public void processPayment(String card, Long paymentOrderId) {
@@ -29,7 +29,7 @@ public class PaymentService {
       throw new RuntimeException("O pedido já foi pago anteriormente");
     }
 
-    boolean paymentResult = paymentHookService.pay(card, paymentOrder);
+    boolean paymentResult = paymentWeebHookService.pay(card, paymentOrder);
 
     if (!paymentResult) {
       throw new RuntimeException(
