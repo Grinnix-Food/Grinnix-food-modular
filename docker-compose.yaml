@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:15-alpine
-    container_name: postgres-db-grinnix-food
+    container_name: postgres-db-grinnix-food-modular
     environment:
       POSTGRES_DB: mydb
       POSTGRES_USER: postgres
@@ -18,7 +18,7 @@ services:
 
   spring-app:
     build: .
-    container_name: spring-boot-app
+    container_name: spring-boot-app-modular
     ports:
       - "9087:9087"
     environment:
@@ -32,7 +32,7 @@ services:
 
   mailhog:
     image: mailhog/mailhog
-    container_name: mailhog-grinnix-food
+    container_name: mailhog-grinnix-food-modular
     ports:
       - "1025:1025"
       - "8025:8025" # Web UI
@@ -40,7 +40,7 @@ services:
 
   k6:
     image: grafana/k6
-    container_name: k6-load-test
+    container_name: k6-load-test-modular
     volumes:
       - ./scripts:/scripts:ro
     command: run /scripts/load-test.js
