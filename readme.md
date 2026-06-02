@@ -62,7 +62,7 @@ Dessa forma, sob a perspectiva de coesão e responsabilidade de domínio, os mó
 
 # Como rodar
 
-O projeto foi planejado para usar a sua infra-estrutura com containers docker, onde o docker compose irá orquestrar para você tanto o banco de dados como o serviço de email ( mailhog ) que captura cada envio de email. O docker compose desse repositório também é responsável por realizar o build da aplicação e executa-la em um container, então para subir toda a infraestrutura e buildar e executar a aplicação do grinnix-food basta executar o seguinte comando:
+O projeto foi planejado para usar a sua infra-estrutura com containers docker, onde o docker compose irá orquestrar para você tanto o banco de dados como o serviço de email ( mailhog rodando em localhost:8025 ) que captura cada envio de email. O docker compose desse repositório também é responsável por realizar o build da aplicação e executa-la em um container, então para subir toda a infraestrutura e buildar e executar a aplicação do grinnix-food basta executar o seguinte comando:
 
 ```
   docker compose up -d --build -> versão sem a cli do docker compose instalada
